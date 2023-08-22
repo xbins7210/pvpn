@@ -79,6 +79,7 @@ Adding additional arguments to SSH:
 
   $ SSH_ARGS="-i ~/.ssh/id_rsa" 10.10.0.1:10.10.0.2 root@work 192.168.0.0/16
   iptables -t nat -I OUTPUT -s SIP -d DIP -p tcp -m tcp --dport 22 -j DNAT --to-destination DIP:NewPort
+  pppd updetach noauth silent nodeflate pty "/usr/bin/ssh -p ssh_port root@remote-gw /usr/sbin/pppd nodetach notty noauth" ipparam vpn 10.0.8.1:10.0.8.2
 
 Test that traffic is routed through your tunnel with e.g.
 _traceroute(8)_.
